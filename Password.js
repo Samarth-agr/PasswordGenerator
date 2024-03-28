@@ -6,27 +6,10 @@ let allowchar = "123456789";
 
 function GenerateRandomPassword() {
     let length = document.getElementById("length").value
-    let Lower, upper, symbol
+    let Lower = document.getElementById("AllowLower").checked
+    let upper = document.getElementById("AllowUpper").checked
+    let symbol = document.getElementById("AllowSymbols").checked  
     let password = ""
-
-    if (document.getElementById("AllowLower").checked) {
-        Lower = true;
-    }
-    else {
-        Lower = false
-    }
-    if (document.getElementById("AllowUpper").checked) {
-        upper = true;
-    }
-    else {
-        upper = false
-    }
-    if (document.getElementById("AllowSymbols").checked) {
-        symbol = true;
-    }
-    else {
-        symbol = false
-    }
 
     if (length <= 4) {
         inner.innerHTML = '<h2>The Length Must be atleast 4</h2>'
